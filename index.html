@@ -43,7 +43,6 @@
             padding: 20px;
         }
 
-        /* h2: 旁邊點綴青海波 */
         h2 {
             color: var(--lions-navy);
             font-size: 2em;
@@ -150,26 +149,61 @@
             font-size: 1em;
         }
 
-        /* 手機版自動改為上下堆疊 */
-        @media (max-width: 768px) {
-            .restaurant-card {
-                flex-direction: column;
-            }
-            .video-section {
-                width: 100%;
-            }
-        }
+        /* 手機版優化：針對螢幕寬度小於 600px 的裝置 */
+@media (max-width: 600px) {
+    header {
+        padding: 30px 15px; /* 縮減標題間距 */
+    }
+
+    h1 {
+        font-size: 1.8em; /* 縮小大標題，避免標題折行太醜 */
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .restaurant-card {
+        flex-direction: column; /* 確保影片在文字下方 */
+    }
+
+    .video-section {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 解決折行問題的核心代碼 */
+    .info-list li {
+        flex-direction: column; /* 讓標籤與內容上下排列 */
+        align-items: flex-start;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #f0f0f0; /* 加一條淡淡的線區隔，增加閱讀性 */
+        padding-bottom: 8px;
+    }
+
+    .label {
+        margin-bottom: 4px; /* 讓標籤跟內容之間有一點小空隙 */
+        background: var(--lions-navy); /* 手機版標籤改深色背景 */
+        color: white;
+        width: fit-content; /* 標籤長度自動適應文字 */
+    }
+    
+    .content {
+        width: 100%;
+        word-break: break-word; /* 確保長網址或文字不會衝出螢幕 */
+    }
+}
     </style>
 </head>
 <body>
 
 <header>
-    <h1>☀️A.LIN 73🦁春訓休日吃吃提案☀️</h1>
+    <h1>☀️A.LIN 73🦁春訓休日提案☀️</h1>
 </header>
 
 <div class="container">
 
-    <h2>☆聽說有人也是海鮮控🦞</h2>
+    <h2>🦞聽說有人也海鮮控</h2>
 
     <div class="restaurant-card">
         <div class="text-section">
@@ -179,7 +213,7 @@
                 <li><span class="label">車程</span> 距南鄉中央公園 33 分鐘</li>
                 <li><span class="label">時間</span> 11:00 – 13:30 (週四休)</li>
                 <li><span class="label">特色</span> 「伊勢海老定食」名店。定食份量充足，也能欣賞優美海景</li>
-                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/wfK3Wy6qoeV7kvXV8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/DLxGBYCv5v0/" target="_self">網友介紹看右圖→</a></li>
+                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/wfK3Wy6qoeV7kvXV8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/DLxGBYCv5v0/" target="_self">網友介紹請點圖</a></li>
             </ul>
         </div>
         <div class="video-section">
@@ -195,7 +229,7 @@
                 <li><span class="label">車程</span> 距南鄉中央公園 4 分鐘</li>
                 <li><span class="label">時間</span> 10:30-14:00 (週一休)</li>
                 <li><span class="label">特色</span> 漁港直營，招牌料理「炙燒鰹魚重」，體驗一魚三吃樂趣</li>
-                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/QvkVceHupsfQj5w96" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/C6gDCpPS0v4/" target="_self">網友介紹看右圖→</a></li>
+                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/QvkVceHupsfQj5w96" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/C6gDCpPS0v4/" target="_self">網友介紹請點圖</a></li>
             </ul>
         </div>
         <div class="video-section">
@@ -211,7 +245,7 @@
                 <li><span class="label">車程</span> 距南鄉中央公園 15 分鐘</li>
                 <li><span class="label">時間</span> 11:00-14:30 (週一休)</li>
                 <li><span class="label">特色</span> 除了生魚片，南蠻雞與炸魚排也很受歡迎</li>
-                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/GLdiKaTh4r6zVEmN8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/DIxyUj5JWdA/" target="_self">網友介紹看右圖→</a></li>
+                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/GLdiKaTh4r6zVEmN8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/reel/DIxyUj5JWdA/" target="_self">網友介紹請點圖</a></li>
             </ul>
         </div>
         <div class="video-section">
@@ -219,7 +253,7 @@
         </div>
     </div>
 
-    <h2>☆只因為發現店名有Ito😂能吃到宮崎牛</h2>
+    <h2>店名有Ito😂能吃到宮崎牛</h2>
 
     <div class="restaurant-card">
         <div class="text-section">
@@ -229,7 +263,7 @@
                 <li><span class="label">車程</span> 距南鄉中央公園 22 分鐘</li>
                 <li><span class="label">時間</span> 11:00-17:00 (週二休)</li>
                 <li><span class="label">特色</span> 在 130 年武士宅邸用餐。推薦鮪魚丼三吃與甜如布丁的厚燒玉子</li>
-                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/oFNEbXmBMGcGJdCY9" target="_self">Google地圖</a> / <a href="https://www.instagram.com/p/DKMyvYwxkr2/" target="_self">網友介紹看右圖→</a></li>
+                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/oFNEbXmBMGcGJdCY9" target="_self">Google地圖</a> / <a href="https://www.instagram.com/p/DKMyvYwxkr2/" target="_self">網友介紹請點圖</a></li>
             </ul>
         </div>
         <div class="video-section">
@@ -237,7 +271,7 @@
         </div>
     </div>
 
-    <h2>☆古民家裡的義大利麵，但可能難吃飽😛</h2>
+    <h2>古民家義大利麵但可能吃不飽😛</h2>
 
     <div class="restaurant-card">
         <div class="text-section">
@@ -247,7 +281,7 @@
                 <li><span class="label">車程</span> 距南鄉中央公園 約 8 分鐘</li>
                 <li><span class="label">時間</span> 預約制。11:30–14:30 (只開週四到週六)</li>
                 <li><span class="label">特色</span> 主打使用在地鮮魚與農產製作的季節義大利麵與窯烤料理</li>
-                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/QxUfTgEUMKMavRSF8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/p/C6qaldBy5Qh/" target="_self">網友介紹看右圖→</a></li>
+                <li><span class="label">連結</span> <a href="https://maps.app.goo.gl/QxUfTgEUMKMavRSF8" target="_self">Google地圖</a> / <a href="https://www.instagram.com/p/C6qaldBy5Qh/" target="_self">網友介紹請點圖</a></li>
             </ul>
         </div>
         <div class="video-section">
